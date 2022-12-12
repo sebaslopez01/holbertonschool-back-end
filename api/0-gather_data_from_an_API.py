@@ -11,7 +11,9 @@ if __name__ == '__main__':
     user_data = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)).json()
     user_todos = requests.get(
-        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(user_id)).json()
+        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
+            user_id
+        )).json()
 
     todos_completed = sum(1 for todo in user_todos if todo['completed'])
 
